@@ -9,32 +9,47 @@
   <body>
 
     <header>
-      <h1>Peter Stone <br> Web Developer</h1>
-
+      <h1 id="heading">Peter Stone <br> Web Developer</h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="http://www.stonesquareddevelopment.com" target="_blank">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div id="nav-icon">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
     </header>
 <main>
+
+  <section class="credentials card">
+    <h2>Credentials</h2>
+    <img src="images/techdegree.jpg" alt="Frontend Techdegree">
+  </section>
   <section class="skills card">
     <h2>Technical Skills Summary</h2>
-    <p><strong>Languages:</strong> HTML5, CSS3, SCSS, JavaScript, jQuery, AJAX, React</p>
+    <p><strong>Languages:</strong> HTML, CSS, SASS/SCSS/LESS, JavaScript, jQuery, AJAX, React</p>
     <p><strong>Tools:</strong> Git and GitHub</p>
     <p><strong>Operating Systems:</strong> Windows, OS X</p>
-    <p><strong>Other Skills:</strong> CSS Animations, Responsive Design, SVG</p>
+    <p><strong>Other Skills:</strong> CSS Animations, Responsive Design, SVG, Third Party APIs</p>
   </section>
 
   <section class="projects card">
     <h2>Portfolio and Highlighted Projects</h2>
-    <h3><a href="http://www.stonesquareddevelopment.com">Portfolio Site</a></h3>
+    <h3><a href="http://www.stonesquareddevelopment.com" target="_blank">Portfolio Site</a></h3>
     	<p>Custom coded a portfolio to showcase my work, including 11 projects and one
       custom built blog.</p>
 
-    <h3><a href="http://www.ianforstermusic.com">Ian Forster Music</a></h3>
+    <h3><a href="http://www.ianforstermusic.com" target="_blank">Ian Forster Music</a></h3>
     <p>Custom built a website for a local musician. HTML, CSS and Javascript</p>
 
-    <h3><a href="http://stonesquareddevelopment.com/mountain-west/">Mountain West</a></h3>
+    <h3><a href="http://stonesquareddevelopment.com/mountain-west/" target="_blank">Mountain West</a></h3>
     	<p>Designed and developed a website for a fictional company utilizing HTML
         forms, CSS, JavaScript, and connecting to a Random User API</p>
 
-    <h3><a href="https://github.com/PetejStone/cornerstone-church/tree/gh-pages">Cornerstone Church</a></h3>
+    <h3><a href="https://github.com/PetejStone/cornerstone-church/tree/gh-pages" target="_blank">Cornerstone Church</a></h3>
     	<p>Designed and developed a custom mockup of a church website using HTML,
         CSS and Javascript.</p>
   </section>
@@ -43,5 +58,7 @@
 
 
     <script src="js/main.js"></script>
+
+    <footer><a href="http://www.stonesquareddevelopment.com">&copy;2019 Stonesquared Development</a></footer>
   </body>
 </html>
