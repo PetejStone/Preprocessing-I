@@ -1,8 +1,38 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
+
+//flexbox mxin
+.flexy(
+  @disp: flex,
+  @dir: null,
+  @wrap: null,
+  @just: null,
+	@ai: null) {
+  display: @disp;
+  flex-direction: @dir;
+  flex-wrap: @wrap;
+  justify-content: @just;
+	align-items: @ai;
+
+}
+//link reset mixin
+.link-reset(@color) {
+  text-decoration: none;
+  list-style-type: none;
+  color: @color;
+}
+
+//breakpoint variables
+@small: 500px;
+@medium: 600px;
+@large: 1240px;
+
+
+@main-color: #1f1f1f;
+@card-color: contrast(@main-color);
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -13,19 +43,18 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -55,5 +84,189 @@ table {
 
 html, body {
     height: 100%;
+		font-size: 62.5%;
+		font-family: 'Cairo', sans-serif;
+		padding: 2rem 0;
 }
 
+
+a {
+	.link-reset(#000);
+	transition: all .3s;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+body {
+	background-color: @main-color;
+}
+
+main {
+	.flexy(flex, column, null, center, center);
+}
+
+.credentials {
+	img {
+		width: 600px;
+		max-width: 100%;
+	}
+}
+
+.about {
+	img {
+		width: 200px;
+		max-width: 100%;
+		border-radius: 50%;
+		margin: 2rem;
+	}
+}
+h1,h2 {
+	padding: 1rem;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+h1 {
+	font-size: 5.5rem;
+	text-align: center;
+	color: #fff;
+	text-shadow: 1px 1px 1px black;
+	font-family: 'Hind Siliguri', sans-serif;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 2rem;
+	background: linear-gradient(to right, @main-color, lighten(@main-color, 40%), @main-color);
+	border-radius: 10px;
+	padding: 1rem 2rem;
+	margin: 1rem;
+	transition: all .3s;
+	&:hover {
+		transform: scale(1.1);
+	}
+	a {
+		color: white;
+	}
+}
+
+
+p {
+	font-size: 1.6rem;
+	line-height: 1.2;
+	text-align: center;
+}
+
+ul {
+	line-height: 5rem;
+}
+li {
+	margin: 1rem;
+	p {
+		font-size: 2rem;
+	}
+	a {
+		font-size: 1.6rem;
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.card {
+	width: 90%;
+	max-width: 600px;
+	background-color: @card-color;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 2rem 10%;
+	.flexy(flex, column, null, center, center);
+}
+
+
+header {
+	.flexy(flex, column, null, null, center);
+	#nav-icon {
+		width: fit-content;
+		margin: 0 auto;
+		cursor: pointer;
+		transform: translateY(-100%);
+	}
+	nav {
+		.flexy(flex, row, null, space-around, null);
+		margin-right: 0px;
+		max-width: 700px;
+		width: 100%;
+		@media (min-width: @medium) {
+			width: 75%;
+		}
+		a {
+			color: @main-color;
+			background-color: contrast(@main-color);
+			font-size: 1.6rem;
+			border-radius: 5px;
+			padding: 1rem 2rem;
+    }
+	}
+}
+
+//nav animation
+nav {
+	display: none;
+	transition: all .7s;
+	transform: translateY(-160%) scale(.9);
+	opacity: 0;
+}
+
+#heading {
+	transition: all .7s;
+}
+
+.slide-down {
+	display: flex;
+	transform: translateY(-130%) scale(1);
+	opacity: 1;
+}
+
+.slide-up {
+	transform: translateY(-38%);
+	opacity: 1;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 3px;
+    background-color: #fff;
+    opacity: .7;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-6px, 3px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+footer {
+	height: 5rem;
+	color: #fff;
+	text-align: center;
+	font-size: 1.4rem;
+	.flexy(flex, row, null, center, center);
+
+	a {
+		color: #fff;
+
+	}
+}

@@ -1,1 +1,319 @@
-/* Compile your LESS file! */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Set every element's box-sizing to border-box */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-size: 62.5%;
+  font-family: 'Cairo', sans-serif;
+  padding: 2rem 0;
+}
+a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #000;
+  transition: all 0.3s;
+}
+a:hover {
+  transform: scale(1.1);
+}
+body {
+  background-color: #1f1f1f;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: null;
+  justify-content: center;
+  align-items: center;
+}
+.credentials img {
+  width: 600px;
+  max-width: 100%;
+}
+.about img {
+  width: 200px;
+  max-width: 100%;
+  border-radius: 50%;
+  margin: 2rem;
+}
+h1,
+h2 {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+h1 {
+  font-size: 5.5rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px black;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+  background: linear-gradient(to right, #1f1f1f, #858585, #1f1f1f);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  margin: 1rem;
+  transition: all 0.3s;
+}
+h3:hover {
+  transform: scale(1.1);
+}
+h3 a {
+  color: white;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  text-align: center;
+}
+ul {
+  line-height: 5rem;
+}
+li {
+  margin: 1rem;
+}
+li p {
+  font-size: 2rem;
+}
+li a {
+  font-size: 1.6rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.card {
+  width: 90%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 2rem 10%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: null;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: null;
+  justify-content: null;
+  align-items: center;
+}
+header #nav-icon {
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+  transform: translateY(-100%);
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: null;
+  justify-content: space-around;
+  align-items: null;
+  margin-right: 0px;
+  max-width: 700px;
+  width: 100%;
+}
+@media (min-width: 600px) {
+  header nav {
+    width: 75%;
+  }
+}
+header nav a {
+  color: #1f1f1f;
+  background-color: #ffffff;
+  font-size: 1.6rem;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+nav {
+  display: none;
+  transition: all 0.7s;
+  transform: translateY(-160%) scale(0.9);
+  opacity: 0;
+}
+#heading {
+  transition: all 0.7s;
+}
+.slide-down {
+  display: flex;
+  transform: translateY(-130%) scale(1);
+  opacity: 1;
+}
+.slide-up {
+  transform: translateY(-38%);
+  opacity: 1;
+}
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 3px;
+  background-color: #fff;
+  opacity: 0.7;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-6px, 3px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+footer {
+  height: 5rem;
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: null;
+  justify-content: center;
+  align-items: center;
+}
+footer a {
+  color: #fff;
+}
+/*# sourceMappingURL=index.css.map */
